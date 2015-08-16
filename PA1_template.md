@@ -62,11 +62,21 @@ plot(Mean.int.aggdata$Interval, Mean.int.aggdata$Mean.Steps, type="l",  ylab="Me
 
 The 5-minute interval, on average across all the days in the dataset, which contains the maximum number of steps is:
 
+```r
+findmaxvalue <- Mean.int.aggdata[order(-Mean.int.aggdata$Mean.Steps),] 
+maxvalue<-head(findmaxvalue, n=1)
+maxvalue[,1]
+```
+
 ```
 ## [1] 835
 ```
 
 The total number of rows in the source data with missing values is:
+
+```r
+sum(is.na(data$steps))
+```
 
 ```
 ## [1] 2304
